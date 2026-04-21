@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "$2a$10$AOcMed58MTQJZgXBoQUCvuPKmA6ArR1QWNZlE7AY4tw2qxMUtnGZ."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Gestion de Tournoi de Golf",
+      "description": "Une application robuste pour la gestion de tournois de golf. Elle inclut un tableau de bord \"Mint Fairway\" moderne, une API de gestion des scores, et une interface utilisateur optimisée pour les administrateurs et les joueurs.",
+      "technologies": "ASP.NET Core, C#, Entity Framework, SQL Server, Razor Pages"
+    },
+    {
+      "id": 2,
+      "title": "Travel Journal iOS",
+      "description": "Une application mobile interactive pour les voyageurs. Utilisant MapKit pour la géolocalisation et SwiftData pour la persistence, elle permet de créer des journaux de voyage riches avec des photos et des itinéraires personnalisés.",
+      "technologies": "SwiftUI, MapKit, SwiftData, CoreLocation"
+    },
+    {
+      "id": 3,
+      "title": "Plateforme Portfolio Full-Stack",
+      "description": "Ce projet même ! Un portfolio moderne construit avec Next.js pour démontrer une expertise en architecture web, gestion d'état avec Redux et intégration de base de données.",
+      "technologies": "Next.js, Tailwind CSS, Redux Toolkit, lowdb"
+    }
+  ],
+  "testimonials": []
+}
