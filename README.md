@@ -19,10 +19,6 @@ Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **R
 - **Communication** : Axios pour toutes les requêtes Frontend/Backend.
 - **Persistance** : lowdb (Base de données locale JSON `db.json`).
 
-## Aperçu du Projet
-
-*Les captures d'écran de l'application seront ajoutées lors de la présentation.*
-
 ## Installation & Lancement
 
 1. **Cloner le dépôt**
