@@ -16,7 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "DevPortfolio | Concepteur Web Full-Stack",
+  title: "Projet de conception de Portfolio en Nextjs",
   description: "Mon portfolio professionnel présentant mes projets, mes compétences et mes témoignages.",
 };
 

@@ -11,8 +11,8 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-8">
-            <Link href="/" className="text-3xl font-black font-outfit bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              Portfolio.
+            <Link href="/" className="text-2xl font-black font-outfit bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent leading-tight">
+              Projet de conception de <br /> Portfolio en Nextjs
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed max-w-sm">
               Concepteur de solutions web innovantes, alliant performance technique et design d'exception pour propulser votre présence numérique.
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12">
             <p className="text-gray-500 text-xs">
-              © {currentYear} Portfolio Design — Tous droits réservés.
+              © {currentYear} Projet Portfolio Nextjs — Tous droits réservés.
             </p>
             <div className="flex gap-6 text-gray-500 text-xs font-bold uppercase tracking-widest">
               <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
