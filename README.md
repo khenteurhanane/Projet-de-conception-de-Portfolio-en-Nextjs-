@@ -2,7 +2,7 @@
 
 Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **Redux Toolkit**, et **lowdb** (Base de données JSON). Il est hébergé sur : [GitHub Repository](https://github.com/khenteurhanane/Projet-de-conception-de-Portfolio-en-Nextjs-)
 
-## 🚀 Fonctionnalités Clés
+## Fonctionnalités Clés
 
 - **Authentification complète** : Système d'inscription et de connexion sécurisé.
 - **Protection des routes** : Conformément aux consignes, **toutes les pages sont protégées** (Home, Projects, Testimonials) et nécessitent une connexion, à l'exception des pages `/login` et `/register`.
@@ -11,7 +11,7 @@ Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **R
 - **Design Premium & Responsive** : Interface optimisée pour mobile, tablette et ordinateur avec Tailwind CSS et Framer Motion.
 - **Validation Strict** : Tous les formulaires incluent des messages d'erreur en rouge pour guider l'utilisateur.
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 - **Frontend** : Next.js 15 (App Router), Tailwind CSS, Framer Motion, Lucide Icons.
 - **State Management** : Redux Toolkit (Store global pour l'auth et les données).
@@ -19,11 +19,11 @@ Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **R
 - **Communication** : Axios pour toutes les requêtes Frontend/Backend.
 - **Persistance** : lowdb (Base de données locale JSON `db.json`).
 
-## 📸 Aperçu du Projet
+## Aperçu du Projet
 
 *Les captures d'écran de l'application seront ajoutées lors de la présentation.*
 
-## ⚙️ Installation & Lancement
+## Installation & Lancement
 
 1. **Cloner le dépôt**
 2. **Installer les dépendances** :
@@ -36,7 +36,7 @@ Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **R
    ```
 4. **Accès** : `http://localhost:3000`
 
-## 👨‍🏫 Respect des Consignes (Checklist)
+## Respect des Consignes (Checklist)
 
 - [x] **Page d'accueil** : Présentation, photo et compétences.
 - [x] **Header/Footer** : Navigation fluide et liens sociaux (GitHub, LinkedIn).
