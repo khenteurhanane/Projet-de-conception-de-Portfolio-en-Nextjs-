@@ -21,9 +21,7 @@ Ce projet est un portfolio moderne et performant conçu avec **Next.js 15**, **R
 
 ## 📸 Aperçu du Projet
 
-| Page d'accueil (Connecté) | Gestion des Témoignages | Détails du Projet |
-| :--- | :--- | :--- |
-| ![Home](https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500) | ![Testimonials](https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=500) | ![Details](https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500) |
+*Les captures d'écran de l'application seront ajoutées lors de la présentation.*
 
 ## ⚙️ Installation & Lancement
 
