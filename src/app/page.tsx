@@ -1,7 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Rocket, Smartphone, Globe, Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { 
+  ArrowRight, Code2, Rocket, Smartphone, Globe, Mail, 
+  Github, Linkedin, ExternalLink, Send, Phone, MapPin,
+  Braces, Layout, MessageSquare, User, CheckCircle2
+} from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -17,7 +21,7 @@ export default function Home() {
     const fetchProjects = async () => {
       try {
         const response = await axios.get('/api/projects');
-        setFeaturedProjects(response.data.slice(0, 3)); // Show only 3 projects on home
+        setFeaturedProjects(response.data.slice(0, 3));
       } catch (error) {
         console.error('Error fetching projects:', error);
       } finally {
@@ -28,253 +32,276 @@ export default function Home() {
   }, []);
 
   const skills = [
-    { name: 'Architecture Web', icon: <Globe className="text-violet-600" />, level: '95%' },
-    { name: 'Mobile Apps', icon: <Smartphone className="text-purple-600" />, level: '85%' },
-    { name: 'Interfaces UI/UX', icon: <Code2 className="text-indigo-600" />, level: '90%' },
-    { name: 'Déploiement Cloud', icon: <Rocket className="text-orange-600" />, level: '80%' },
+    { name: 'HTML', level: '95%', color: 'bg-orange-500' },
+    { name: 'CSS', level: '90%', color: 'bg-blue-500' },
+    { name: 'JavaScript', level: '90%', color: 'bg-yellow-500' },
+    { name: 'React', level: '85%', color: 'bg-sky-400' },
+    { name: 'Next.js', level: '85%', color: 'bg-black' },
+    { name: 'Tailwind CSS', level: '90%', color: 'bg-cyan-400' },
+    { name: 'Node.js', level: '80%', color: 'bg-green-600' },
+    { name: 'SQL', level: '75%', color: 'bg-indigo-600' },
   ];
 
   return (
-    <div className="flex flex-col gap-32 pb-32">
+    <div className="flex flex-col gap-0 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(124,58,237,0.15),transparent_50%)] z-0" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-10"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100/50 text-violet-700 text-sm font-bold border border-violet-200">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-violet-600"></span>
-              </span>
-              Disponible pour de nouveaux défis
-            </div>
-            
-            <h1 className="text-7xl md:text-8xl font-black font-outfit text-gray-950 leading-[1.1] tracking-tight">
-              Hanane <br />
-              <span className="text-violet-600">Khenteur</span>
-            </h1>
-            
-            <p className="text-xl text-gray-700 max-w-xl leading-relaxed font-medium">
-              Concepteuse Web passionnée par la création d'expériences numériques élégantes et performantes. 
-              Je transforme vos visions complexes en solutions techniques robustes et innovantes.
-            </p>
+      <section className="relative min-h-screen bg-[#050505] text-white flex items-center pt-20">
+        <div className="absolute inset-0 z-0">
+           <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-[120px]" />
+           <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px]" />
+        </div>
 
-            <div className="flex flex-wrap gap-6 pt-4">
-              {!user ? (
-                <>
-                  <Link
-                    href="/register"
-                    className="px-10 py-5 bg-violet-600 text-white rounded-2xl font-bold hover:bg-violet-700 transition-all flex items-center gap-3 shadow-xl shadow-violet-200 hover:-translate-y-1"
-                  >
-                    Démarrer un projet <ArrowRight size={22} />
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="px-10 py-5 bg-white text-gray-900 border-2 border-gray-100 rounded-2xl font-bold hover:bg-gray-50 transition-all flex items-center gap-3 shadow-sm hover:-translate-y-1"
-                  >
-                    Connexion
-                  </Link>
-                </>
-              ) : (
-                <Link
-                  href="/projects"
-                  className="px-10 py-5 bg-gray-950 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all flex items-center gap-3 shadow-xl shadow-gray-300 hover:-translate-y-1"
-                >
-                  Mes Réalisations <ArrowRight size={22} />
-                </Link>
-              )}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative lg:block hidden"
-          >
-            <div className="relative w-[500px] h-[550px] mx-auto">
-              {/* Decorative Blur */}
-              <div className="absolute -top-10 -right-10 w-72 h-72 bg-violet-200 rounded-full blur-[100px] opacity-40 animate-pulse" />
-              <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-indigo-200 rounded-full blur-[100px] opacity-40 animate-pulse" />
-              
-              <div className="relative z-10 w-full h-full rounded-[4rem] overflow-hidden border-8 border-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] rotate-2 hover:rotate-0 transition-all duration-700 group">
-                <img
-                  src="/profile.jpg"
-                  alt="Hanane Khenteur"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Disponible pour de nouvelles opportunités
               </div>
               
-              {/* Floating Tech Cards */}
-              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-12 z-20 bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-white/50"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-violet-50 text-violet-600 rounded-2xl">
-                    <Rocket size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">Spécialité</p>
-                    <p className="text-base font-black text-gray-900 leading-none">Hanane Khenteur</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              <div className="space-y-4">
+                <h2 className="text-2xl font-medium text-gray-300">Bonjour, je suis</h2>
+                <h1 className="text-6xl md:text-8xl font-black font-outfit leading-none tracking-tight">
+                  Hanane <span className="text-violet-500">Khenteur.</span>
+                </h1>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-400">Concepteuse Web</h3>
+              </div>
 
-      {/* About / Skills Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <h2 className="text-5xl font-black font-outfit text-gray-950">
-              Expertise <br />
-              <span className="text-violet-600">Multidimensionnelle</span>
-            </h2>
-            <p className="text-xl text-gray-700 leading-relaxed font-medium">
-              Forte d'un parcours axé sur les technologies web modernes, je m'efforce de toujours repousser les limites 
-              de ce qui est possible. Mon approche combine rigueur technique et sens aigu de l'esthétique pour 
-              offrir des résultats qui surpassent les attentes.
-            </p>
-            <div className="flex gap-4">
-               <div className="px-6 py-3 bg-gray-100 rounded-xl font-bold text-gray-800 text-sm">#Performance</div>
-               <div className="px-6 py-3 bg-gray-100 rounded-xl font-bold text-gray-800 text-sm">#Sécurité</div>
-               <div className="px-6 py-3 bg-gray-100 rounded-xl font-bold text-gray-800 text-sm">#Design</div>
-            </div>
-          </motion.div>
+              <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+                Je crée des applications web modernes, rapides et élégantes avec les technologies les plus avancées du marché.
+              </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                  {skill.icon}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link 
+                  href="/projects"
+                  className="px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold transition-all flex items-center gap-2 shadow-lg shadow-violet-600/20"
+                >
+                  Voir mes projets <ArrowRight size={20} />
+                </Link>
+                <Link 
+                  href="/#contact"
+                  className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2"
+                >
+                  Me contacter <Mail size={20} />
+                </Link>
+              </div>
+
+              <div className="flex gap-6 pt-8">
+                <a href="https://github.com/khenteurhanane/Projet-de-conception-de-Portfolio-en-Nextjs-" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors"><Github size={24} /></a>
+                <a href="https://linkedin.com/in/hanane-khenteur" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors"><Linkedin size={24} /></a>
+                <a href="mailto:contact@hanane.com" className="text-gray-500 hover:text-white transition-colors"><Mail size={24} /></a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex justify-center lg:justify-end"
+            >
+              <div className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px]">
+                <div className="absolute inset-0 bg-violet-600 rounded-[3rem] rotate-6 z-0" />
+                <div className="relative z-10 w-full h-full rounded-[3rem] overflow-hidden border-4 border-gray-900 shadow-2xl">
+                   <img src="/profile.jpg" alt="Hanane Khenteur" className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
                 </div>
-                <h3 className="text-xl font-black mb-4 text-gray-950">{skill.name}</h3>
-                <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: skill.level }}
-                    transition={{ duration: 1.5, delay: 0.5 }}
-                    className="h-full bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"
-                  />
+
+                {/* Floating Stat Cards */}
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -right-10 top-20 bg-gray-900/90 backdrop-blur-xl p-4 rounded-2xl border border-white/10 shadow-2xl z-20"
+                >
+                  <p className="text-2xl font-black text-white">+2</p>
+                  <p className="text-[10px] text-gray-500 uppercase font-black">Années d'expérience</p>
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -right-10 bottom-20 bg-gray-900/90 backdrop-blur-xl p-4 rounded-2xl border border-white/10 shadow-2xl z-20"
+                >
+                  <p className="text-2xl font-black text-white">15+</p>
+                  <p className="text-[10px] text-gray-500 uppercase font-black">Projets réalisés</p>
+                </motion.div>
+                
+                <div className="absolute -left-10 bottom-[25%] bg-violet-600 p-4 rounded-2xl shadow-xl z-20">
+                   <Braces className="text-white" size={28} />
                 </div>
-                <p className="mt-3 text-right text-sm font-black text-violet-600 uppercase tracking-widest">{skill.level}</p>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section className="bg-gray-950 py-32 rounded-[4rem] mx-4 sm:mx-8">
+      {/* About & Skills Section */}
+      <section id="about" className="bg-white py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 text-center md:text-left">
-            <div className="space-y-6">
-              <h2 className="text-5xl md:text-6xl font-black font-outfit text-white">Projets <span className="text-violet-500">Phares</span></h2>
-              <p className="text-xl text-gray-400 max-w-xl font-medium">Une démonstration de mon savoir-faire technique à travers des projets concrets.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            {/* Left: About */}
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <span className="text-violet-600 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-violet-600" /> À propos
+                </span>
+                <h2 className="text-4xl font-black text-gray-950">Qui suis-je ?</h2>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  Passionnée par le développement web, j'aime transformer des idées en solutions digitales performantes et intuitives. 
+                  Je suis toujours à la recherche de nouveaux défis et d'opportunités d'apprentissage.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-violet-50 text-violet-600 rounded-xl"><Globe size={20} /></div>
+                  <span className="font-bold text-gray-700">Développement d'applications web</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-violet-50 text-violet-600 rounded-xl"><Smartphone size={20} /></div>
+                  <span className="font-bold text-gray-700">Intégration responsive & UI/UX</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-violet-50 text-violet-600 rounded-xl"><Rocket size={20} /></div>
+                  <span className="font-bold text-gray-700">Optimisation des performances</span>
+                </div>
+              </div>
+
+              <button className="px-8 py-4 bg-violet-600 text-white rounded-xl font-bold shadow-lg shadow-violet-200">En savoir plus sur moi</button>
             </div>
-            <Link 
-              href="/projects" 
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/10 rounded-2xl font-bold transition-all flex items-center gap-2 group shrink-0 self-center md:self-end"
-            >
-              Tous les projets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+
+            {/* Right: Skills Grid */}
+            <div id="skills" className="space-y-10">
+              <span className="text-violet-600 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-violet-600" /> Compétences
+              </span>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                {skills.map(skill => (
+                  <div key={skill.name} className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm flex flex-col items-center gap-4 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div className="w-12 h-12 flex items-center justify-center opacity-80">
+                       <Code2 size={32} className="text-gray-400" />
+                    </div>
+                    <div className="text-center">
+                       <p className="text-xs font-black text-gray-950 uppercase">{skill.name}</p>
+                       <p className="text-[10px] text-gray-400 font-bold">{skill.level}</p>
+                    </div>
+                    <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                       <div className={`h-full ${skill.color}`} style={{ width: skill.level }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="bg-gray-50 py-32 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-end mb-16">
+            <div className="space-y-4">
+              <span className="text-violet-600 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-violet-600" /> Projets récents
+              </span>
+              <h2 className="text-4xl font-black text-gray-950">Mes dernières réalisations</h2>
+            </div>
+            <Link href="/projects" className="text-violet-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+              Voir tous les projets <ArrowRight size={18} />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {loading ? (
-               [1, 2, 3].map(i => <div key={i} className="h-[450px] bg-white/5 animate-pulse rounded-[3rem]" />)
+              [1, 2, 3].map(i => <div key={i} className="h-80 bg-white rounded-3xl animate-pulse" />)
             ) : (
-              featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden hover:bg-white/[0.08] transition-all"
-              >
-                <div className="h-64 bg-gradient-to-br from-violet-600 to-indigo-700 p-10 flex items-end relative overflow-hidden">
-                   <div className="absolute top-0 right-0 p-8 text-white/20 scale-150 rotate-12">
-                      <Code2 size={120} />
+              featuredProjects.map(project => (
+                <div key={project.id} className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-2xl transition-all group">
+                   <div className="h-48 bg-gray-100 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-indigo-700 opacity-60 group-hover:opacity-40 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                         <Layout className="text-white opacity-20" size={100} />
+                      </div>
                    </div>
-                   <h3 className="text-2xl font-black text-white relative z-10">{project.title}</h3>
+                   <div className="p-8 space-y-4">
+                      <h3 className="text-xl font-black text-gray-900">{project.title}</h3>
+                      <p className="text-gray-500 text-sm line-clamp-2 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 pt-2">
+                         {project.technologies.split(',').slice(0, 3).map((tech: string) => (
+                           <span key={tech} className="px-3 py-1 bg-violet-50 text-violet-700 text-[10px] font-bold rounded-lg uppercase">
+                             {tech.trim()}
+                           </span>
+                         ))}
+                      </div>
+                      <div className="pt-6 border-t border-gray-50 flex justify-between items-center">
+                         <a href="#" className="text-violet-600 text-xs font-bold flex items-center gap-1">Démo <ExternalLink size={14} /></a>
+                         <a href="https://github.com/khenteurhanane/Projet-de-conception-de-Portfolio-en-Nextjs-" target="_blank" rel="noopener noreferrer" className="text-gray-500 text-xs font-bold flex items-center gap-1">GitHub <Github size={14} /></a>
+                      </div>
+                   </div>
                 </div>
-                <div className="p-10 space-y-6">
-                  <p className="text-gray-400 line-clamp-2 text-base font-medium">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.split(',').slice(0, 3).map((tech: string) => (
-                      <span key={tech} className="px-3 py-1 bg-white/5 text-gray-300 text-[10px] font-black rounded-lg uppercase tracking-tighter">
-                        {tech.trim()}
-                      </span>
-                    ))}
-                  </div>
-                  <Link 
-                    href={`/projects/${project.id}`} 
-                    className="inline-flex items-center gap-2 text-violet-400 font-bold hover:text-violet-300 transition-colors pt-4 group/link"
-                  >
-                    Explorer <ExternalLink size={16} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                  </Link>
-                </div>
-              </motion.div>
-            )))}
+              ))
+            )}
           </div>
         </div>
       </section>
 
-      {/* Contact / CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-         <motion.div 
-           initial={{ opacity: 0, scale: 0.9 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
-           className="bg-violet-600 py-24 px-8 rounded-[4rem] shadow-2xl shadow-violet-200 space-y-10 relative overflow-hidden"
-         >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1),transparent_40%)]" />
-            <h2 className="text-5xl md:text-7xl font-black font-outfit text-white relative z-10">
-              Prêt à lancer <br />
-              votre <span className="text-violet-200">Prochain Projet ?</span>
-            </h2>
-            <p className="text-xl text-violet-50 max-w-2xl mx-auto font-medium relative z-10">
-              Je suis toujours à la recherche de collaborations passionnantes. 
-              Parlons de votre vision et voyons comment je peux vous aider.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 relative z-10">
-              <a 
-                href="mailto:contact@votreportfolio.com" 
-                className="px-10 py-5 bg-white text-violet-600 rounded-2xl font-black flex items-center gap-3 transition-transform hover:scale-105"
-              >
-                <Mail size={22} /> Me contacter
-              </a>
-              <div className="flex gap-4">
-                 <a href="#" className="p-5 bg-violet-700 text-white rounded-2xl hover:bg-violet-800 transition-colors"><Github size={24} /></a>
-                 <a href="#" className="p-5 bg-violet-700 text-white rounded-2xl hover:bg-violet-800 transition-colors"><Linkedin size={24} /></a>
+      {/* Contact Section */}
+      <section id="contact" className="bg-white py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+              <div className="space-y-10">
+                 <div className="space-y-4">
+                    <span className="text-violet-600 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                       <div className="w-2 h-2 rounded-full bg-violet-600" /> Contact
+                    </span>
+                    <h2 className="text-4xl font-black text-gray-950">Travaillons ensemble</h2>
+                    <p className="text-gray-600">
+                       Vous avez un projet en tête ou une opportunité ? N'hésitez pas à me contacter.
+                    </p>
+                 </div>
+
+                 <form className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       <input type="text" placeholder="Votre nom" className="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-violet-500 transition-all outline-none" />
+                       <input type="email" placeholder="Votre email" className="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-violet-500 transition-all outline-none" />
+                    </div>
+                    <textarea placeholder="Votre message" rows={5} className="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-violet-500 transition-all outline-none resize-none"></textarea>
+                    <button className="w-full py-4 bg-violet-600 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-violet-700 transition-all group">
+                       Envoyer le message <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </button>
+                 </form>
               </div>
-            </div>
-         </motion.div>
+
+              <div className="space-y-12 lg:pl-12 pt-12 lg:pt-0">
+                 <div className="flex gap-6">
+                    <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><Mail size={24} /></div>
+                    <div>
+                       <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Email</p>
+                       <p className="text-lg font-black text-gray-900">contact@hanane.com</p>
+                    </div>
+                 </div>
+                 <div className="flex gap-6">
+                    <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><Phone size={24} /></div>
+                    <div>
+                       <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Téléphone</p>
+                       <p className="text-lg font-black text-gray-900">+212 6 12 34 56 78</p>
+                    </div>
+                 </div>
+                 <div className="flex gap-6">
+                    <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><MapPin size={24} /></div>
+                    <div>
+                       <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Localisation</p>
+                       <p className="text-lg font-black text-gray-900">Casablanca, Maroc</p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
       </section>
     </div>
   );

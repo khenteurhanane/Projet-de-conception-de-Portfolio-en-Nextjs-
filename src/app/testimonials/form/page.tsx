@@ -64,7 +64,7 @@ function TestimonialFormContent() {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <button
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-gray-500 hover:text-blue-600 font-medium mb-12 transition-colors"
+        className="flex items-center gap-2 text-gray-500 hover:text-violet-600 font-medium mb-12 transition-colors"
       >
         <ArrowLeft size={20} /> Retour
       </button>
@@ -92,7 +92,7 @@ function TestimonialFormContent() {
                 type="text"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
-                className="block w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+                className="block w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all outline-none"
                 placeholder="Ex: Jean Dupont"
               />
             </div>
@@ -103,7 +103,7 @@ function TestimonialFormContent() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={6}
-                className="block w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none resize-none"
+                className="block w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all outline-none resize-none"
                 placeholder="Partagez votre expérience..."
               />
             </div>
@@ -122,7 +122,7 @@ function TestimonialFormContent() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+              className="w-full py-5 bg-violet-600 text-white rounded-2xl font-bold shadow-lg shadow-violet-200 hover:bg-violet-700 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3"
             >
               {loading ? 'Traitement...' : id ? 'Enregistrer les modifications' : 'Envoyer le témoignage'}
               {!loading && <Send size={20} />}

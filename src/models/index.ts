@@ -127,7 +127,7 @@ export const initDB = async () => {
       },
       {
         id: 3,
-        title: 'Plateforme Portfolio Full-Stack',
+        title: 'Plateforme Portfolio Concepteur Web Moderne',
         description: 'Ce projet même ! Un portfolio moderne construit avec Next.js pour démontrer une expertise en architecture web, gestion d\'état avec Redux et intégration de base de données.',
         technologies: 'Next.js, Tailwind CSS, Redux Toolkit, lowdb',
       },

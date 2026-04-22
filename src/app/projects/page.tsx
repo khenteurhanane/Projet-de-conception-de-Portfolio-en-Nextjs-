@@ -33,7 +33,7 @@ export default function ProjectsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center space-y-4 mb-20">
         <h1 className="text-4xl md:text-6xl font-bold font-outfit">Mes Réalisations</h1>
-        <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
+        <div className="h-1.5 w-24 bg-violet-600 mx-auto rounded-full" />
         <p className="text-gray-600 max-w-2xl mx-auto">
           Découvrez une sélection de mes projets les plus récents, démontrant mon savoir-faire technique et créatif.
         </p>
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-violet-600"></div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
               className="group bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all"
             >
               {/* Project Card Header (Mock Image Area) */}
-              <div className="h-56 bg-gradient-to-br from-blue-500 to-indigo-600 relative p-8 flex items-end">
+              <div className="h-56 bg-gradient-to-br from-violet-500 to-indigo-600 relative p-8 flex items-end">
                 <div className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-xl text-white">
                   <Layers size={20} />
                 </div>
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
                 <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                    className="text-violet-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     Détails du projet <ExternalLink size={16} />
                   </Link>

@@ -40,14 +40,14 @@ p {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  background: linear-gradient(135deg, #7c3aed, #4f46e5); /* Violet to Indigo */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Buttons and Interactions */
 .btn-primary {
-  @apply px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95;
+  @apply px-6 py-3 bg-violet-600 text-white rounded-xl font-bold hover:bg-violet-700 transition-all shadow-lg shadow-violet-200 active:scale-95;
 }
 
 .btn-secondary {

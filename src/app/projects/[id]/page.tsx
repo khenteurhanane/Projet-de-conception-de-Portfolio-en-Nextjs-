@@ -36,14 +36,14 @@ export default function ProjectDetailsPage() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-violet-600"></div>
     </div>
   );
 
   if (!project) return (
     <div className="max-w-7xl mx-auto px-4 py-24 text-center">
       <h1 className="text-2xl font-bold">Projet non trouvé</h1>
-      <Link href="/projects" className="text-blue-600 mt-4 block">Retour aux projets</Link>
+      <Link href="/projects" className="text-violet-600 mt-4 block">Retour aux projets</Link>
     </div>
   );
 
@@ -53,7 +53,7 @@ export default function ProjectDetailsPage() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-gray-500 hover:text-blue-600 font-medium mb-12 transition-colors"
+        className="flex items-center gap-2 text-gray-500 hover:text-violet-600 font-medium mb-12 transition-colors"
       >
         <ArrowLeft size={20} /> Retour aux projets
       </motion.button>
@@ -68,7 +68,7 @@ export default function ProjectDetailsPage() {
             <h1 className="text-5xl font-bold font-outfit text-gray-900">{project.title}</h1>
             <div className="flex flex-wrap gap-4 text-sm text-gray-500 font-medium">
               <span className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-100 shadow-sm">
-                <Calendar size={16} className="text-blue-500" /> Janv - Avr 2024
+                <Calendar size={16} className="text-violet-500" /> Janv - Avr 2024
               </span>
               <span className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-100 shadow-sm">
                 <User size={16} className="text-purple-500" /> Solo Project
@@ -100,13 +100,13 @@ export default function ProjectDetailsPage() {
             className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-100"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <Code2 className="text-blue-600" /> Technologies
+              <Code2 className="text-violet-600" /> Technologies
             </h3>
             <div className="flex flex-wrap gap-3">
               {project.technologies.split(',').map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-blue-50 text-blue-700 text-sm font-bold rounded-xl border border-blue-100"
+                  className="px-4 py-2 bg-violet-50 text-violet-700 text-sm font-bold rounded-xl border border-violet-100"
                 >
                   {tech.trim()}
                 </span>
@@ -118,10 +118,10 @@ export default function ProjectDetailsPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="bg-gray-900 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-100/20"
+            className="bg-gray-900 p-8 rounded-[2.5rem] text-white shadow-xl shadow-violet-100/20"
           >
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-              <Globe className="text-blue-400" /> Liens
+              <Globe className="text-violet-400" /> Liens
             </h3>
             <div className="space-y-4">
               <a href="#" className="flex items-center justify-between p-4 bg-white/10 rounded-2xl hover:bg-white/20 transition-all border border-white/10">

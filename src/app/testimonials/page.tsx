@@ -32,14 +32,14 @@ export default function TestimonialsPage() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-20">
         <div className="text-center md:text-left space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold font-outfit">Témoignages</h1>
-          <div className="h-1.5 w-24 bg-blue-600 rounded-full" />
+          <div className="h-1.5 w-24 bg-violet-600 rounded-full" />
           <p className="text-gray-600 max-w-xl">
             Ce que les collaborateurs et clients disent de notre travail ensemble.
           </p>
         </div>
         <Link
           href="/testimonials/form"
-          className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all flex items-center gap-2"
+          className="px-8 py-4 bg-violet-600 text-white rounded-2xl font-bold shadow-lg shadow-violet-200 hover:bg-violet-700 hover:scale-105 transition-all flex items-center gap-2"
         >
           <Plus size={20} /> Laisser un message
         </Link>
@@ -47,7 +47,7 @@ export default function TestimonialsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-violet-600"></div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -60,7 +60,7 @@ export default function TestimonialsPage() {
               viewport={{ once: true }}
               className="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm relative group"
             >
-              <div className="absolute top-10 right-10 text-blue-100 group-hover:text-blue-200 transition-colors">
+              <div className="absolute top-10 right-10 text-violet-100 group-hover:text-violet-200 transition-colors">
                 <Quote size={60} />
               </div>
               
@@ -71,14 +71,14 @@ export default function TestimonialsPage() {
                 
                 <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-violet-600">
                       <User size={24} />
                     </div>
                     <span className="font-bold text-gray-900">{testimonial.author}</span>
                   </div>
                   <Link
                     href={`/testimonials/form?id=${testimonial.id}`}
-                    className="p-3 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all"
+                    className="p-3 text-gray-400 hover:text-violet-600 hover:bg-violet-50 rounded-2xl transition-all"
                   >
                     <Edit2 size={18} />
                   </Link>

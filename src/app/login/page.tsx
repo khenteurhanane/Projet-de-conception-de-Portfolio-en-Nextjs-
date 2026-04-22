@@ -63,7 +63,7 @@ export default function LoginPage() {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="block w-full pl-11 pr-4 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+                  className="block w-full pl-11 pr-4 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all outline-none"
                   placeholder="votre_nom"
                 />
               </div>
@@ -79,7 +79,7 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-11 pr-4 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+                  className="block w-full pl-11 pr-4 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all outline-none"
                   placeholder="••••••••"
                 />
               </div>
@@ -99,7 +99,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full py-4 bg-violet-600 text-white rounded-2xl font-bold shadow-lg shadow-violet-200 hover:bg-violet-700 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading ? 'Connexion...' : 'Se connecter'}
               {!loading && <ArrowRight size={20} />}
@@ -109,7 +109,7 @@ export default function LoginPage() {
           <div className="mt-8 text-center pt-8 border-t border-gray-100">
             <p className="text-gray-500 text-sm">
               Vous n'avez pas de compte ?{' '}
-              <Link href="/register" className="text-blue-600 font-bold hover:underline">
+              <Link href="/register" className="text-violet-600 font-bold hover:underline">
                 Créer un compte
               </Link>
             </p>

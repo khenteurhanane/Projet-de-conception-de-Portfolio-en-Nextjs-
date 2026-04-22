@@ -4,6 +4,11 @@
       "id": 1,
       "username": "admin",
       "password": "$2a$10$AOcMed58MTQJZgXBoQUCvuPKmA6ArR1QWNZlE7AY4tw2qxMUtnGZ."
+    },
+    {
+      "id": 2,
+      "username": "testuser",
+      "password": "$2a$10$NNv7c3Dzsiqp66YhXTT/gOn4ACbjEeIglWKAMA4isI14d6YtWngRK"
     }
   ],
   "projects": [
@@ -26,5 +31,11 @@
       "technologies": "Next.js, Tailwind CSS, Redux Toolkit, lowdb"
     }
   ],
-  "testimonials": []
+  "testimonials": [
+    {
+      "id": 1,
+      "author": "Test User",
+      "message": "Un portfolio tres professionnel."
+    }
+  ]
 }
