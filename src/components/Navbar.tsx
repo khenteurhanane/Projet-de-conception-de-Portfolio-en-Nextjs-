@@ -41,7 +41,7 @@ export default function Navbar() {
               <div className="p-1.5 bg-violet-600 rounded-lg">
                 <Code2 size={20} className="text-white" />
               </div>
-              <span>Hanane <span className="text-violet-500">Khenteur</span></span>
+              <span><span className="text-violet-500">Hanane</span> Khenteur</span>
             </Link>
             
             <div className="hidden md:flex items-center gap-8">

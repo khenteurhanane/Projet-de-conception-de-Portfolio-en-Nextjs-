@@ -67,7 +67,7 @@ export default function Home() {
               <div className="space-y-4">
                 <h2 className="text-2xl font-medium text-gray-300">Bonjour, je suis</h2>
                 <h1 className="text-6xl md:text-8xl font-black font-outfit leading-none tracking-tight">
-                  Hanane <span className="text-violet-500">Khenteur.</span>
+                  <span className="text-violet-500">Hanane</span> Khenteur.
                 </h1>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-400">Concepteuse Web</h3>
               </div>
@@ -94,7 +94,7 @@ export default function Home() {
               <div className="flex gap-6 pt-8">
                 <a href="https://github.com/khenteurhanane/Projet-de-conception-de-Portfolio-en-Nextjs-" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors"><Github size={24} /></a>
                 <a href="https://linkedin.com/in/hanane-khenteur" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors"><Linkedin size={24} /></a>
-                <a href="mailto:contact@hanane.com" className="text-gray-500 hover:text-white transition-colors"><Mail size={24} /></a>
+                <a href="mailto:khenteur.hanane2023@gmail.com" className="text-gray-500 hover:text-white transition-colors"><Mail size={24} /></a>
               </div>
             </motion.div>
 
@@ -282,21 +282,21 @@ export default function Home() {
                     <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><Mail size={24} /></div>
                     <div>
                        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Email</p>
-                       <p className="text-lg font-black text-gray-900">contact@hanane.com</p>
+                       <p className="text-lg font-black text-gray-900">khenteur.hanane2023@gmail.com</p>
                     </div>
                  </div>
                  <div className="flex gap-6">
                     <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><Phone size={24} /></div>
                     <div>
                        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Téléphone</p>
-                       <p className="text-lg font-black text-gray-900">+212 6 12 34 56 78</p>
+                       <p className="text-lg font-black text-gray-900">438 336 0222</p>
                     </div>
                  </div>
                  <div className="flex gap-6">
                     <div className="p-4 bg-violet-50 text-violet-600 rounded-2xl"><MapPin size={24} /></div>
                     <div>
                        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Localisation</p>
-                       <p className="text-lg font-black text-gray-900">Casablanca, Maroc</p>
+                       <p className="text-lg font-black text-gray-900">Ottawa, Canada</p>
                     </div>
                  </div>
               </div>

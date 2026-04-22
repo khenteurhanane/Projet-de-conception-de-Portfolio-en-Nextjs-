@@ -15,7 +15,7 @@ export default function Footer() {
               <div className="p-1.5 bg-violet-600 rounded-lg">
                 <Code2 size={24} className="text-white" />
               </div>
-              <span>Hanane <span className="text-violet-500">Khenteur</span></span>
+              <span><span className="text-violet-500">Hanane</span> Khenteur</span>
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed max-w-sm">
               Concepteuse de solutions web innovantes, alliant performance technique et design d'exception pour propulser votre présence numérique.
