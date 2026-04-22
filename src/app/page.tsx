@@ -28,10 +28,10 @@ export default function Home() {
   }, []);
 
   const skills = [
-    { name: 'Full-Stack Dev', icon: <Globe className="text-violet-600" />, level: '95%' },
+    { name: 'Architecture Web', icon: <Globe className="text-violet-600" />, level: '95%' },
     { name: 'Mobile Apps', icon: <Smartphone className="text-purple-600" />, level: '85%' },
-    { name: 'Architecture', icon: <Code2 className="text-indigo-600" />, level: '90%' },
-    { name: 'Déploiement', icon: <Rocket className="text-orange-600" />, level: '80%' },
+    { name: 'Interfaces UI/UX', icon: <Code2 className="text-indigo-600" />, level: '90%' },
+    { name: 'Déploiement Cloud', icon: <Rocket className="text-orange-600" />, level: '80%' },
   ];
 
   return (
@@ -60,7 +60,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-gray-700 max-w-xl leading-relaxed font-medium">
-              Développeuse Web Full-Stack passionnée par la création d'expériences numériques élégantes et performantes. 
+              Concepteuse Web passionnée par la création d'expériences numériques élégantes et performantes. 
               Je transforme vos visions complexes en solutions techniques robustes et innovantes.
             </p>
 
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="relative z-10 w-full h-full rounded-[4rem] overflow-hidden border-8 border-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] rotate-2 hover:rotate-0 transition-all duration-700 group">
                 <img
                   src="/profile.jpg"
-                  alt="Développeur Expert"
+                  alt="Hanane Khenteur"
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

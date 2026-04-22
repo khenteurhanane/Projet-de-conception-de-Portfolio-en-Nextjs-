@@ -15,7 +15,7 @@ export default function Footer() {
               Projet de conception de <br /> Portfolio en Nextjs
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed max-w-sm">
-              Concepteur de solutions web innovantes, alliant performance technique et design d'exception pour propulser votre présence numérique.
+              Concepteuse de solutions web innovantes, alliant performance technique et design d'exception pour propulser votre présence numérique.
             </p>
             <div className="flex gap-4">
               <a href="https://github.com/khenteurhanane/Projet-de-conception-de-Portfolio-en-Nextjs-" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-violet-600 transition-all group">

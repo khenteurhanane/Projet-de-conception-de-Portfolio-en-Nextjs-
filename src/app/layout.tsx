@@ -17,7 +17,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Projet de conception de Portfolio en Nextjs",
-  description: "Mon portfolio professionnel présentant mes projets, mes compétences et mes témoignages.",
+  description: "Portfolio professionnel de Hanane Khenteur, Concepteuse Web spécialisée en Next.js.",
 };
 
 import AuthGuard from "@/components/AuthGuard";
